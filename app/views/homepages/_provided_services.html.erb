@@ -1,0 +1,33 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="position-relative opacity-0 " style="height: 800px; overflow: hidden;transition: opacity 2s ease-in-out;">
+  
+  <div class="container font_inter24">
+    <br>
+    <div class = "row">
+        <div class="col-6" style="text-align:left;">
+            <div class="global_header text-center " style="letter-spacing: 3px;">WHAT WE OFFER</div>
+              <br>
+              <div class = "text-center" style="font-style:italic;">Christ-Centered Counseling for Real-Life Struggles</div>
+
+        </div>
+    </div>
+  
+    <br>
+    <% @home_page_content.each do |content| %>
+    <div class="card border-0">
+        <div class="card-body">
+            <h5 class="card-title global_blue global_header" style="margin-left:20%;"><%= content.location_heading.upcase %></h5>
+            <hr>
+            <p style="margin-left:20%;">
+               <%= content.data_text%>
+            </p>
+        </div>
+    </div>
+    <br>
+    <% end %>
+
+    
+</div>
+<hr>
+<br>
+</div>

@@ -1,0 +1,30 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="d-flex <%=image_position%> position-relative opacity-0 container"
+     style=" transition: opacity 2s ease-in-out;">
+
+  <!-- LEFT SIDE: Text card (larger) -->
+  <div class="position-relative z-2" style="width: 50%;">
+    <div class="card border-0 " style="background-color: transparent; color: #000;">
+      <div class="card-body d-flex flex-column justify-content-center">
+        <h6 class="card-subtitle mb-3 text-muted global_blue global_header"><%= content.location_heading %></h6>
+        <p class="card-text"><%= content.data_text %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE: Image (smaller) -->
+ <!-- RIGHT SIDE: Image (smaller with fixed size) -->
+<div style="width: 400px; height: 500px;" class="d-flex align-items-center justify-content-center">
+  <%= image_tag content.pic_url,
+        class: "opacity-75 rounded shadow",
+        alt: "Banner",
+        style: "max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s ease-out;" %>
+</div>
+
+
+</div>
+<br>
+<br>
+<br>
+
+

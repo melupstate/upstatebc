@@ -1,0 +1,2 @@
+class PdiColumnDescription < ApplicationRecord
+end

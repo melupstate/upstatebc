@@ -1,0 +1,2 @@
+class CommonTopicsController < ApplicationController
+end

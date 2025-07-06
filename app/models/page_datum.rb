@@ -1,0 +1,2 @@
+class PageDatum < ApplicationRecord
+end

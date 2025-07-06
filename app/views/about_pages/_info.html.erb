@@ -1,0 +1,12 @@
+
+ <% @about_pages_content.each_with_index do |content,index | %>
+
+ <% if index.even? %>
+ <% @image_position = ''%>
+ <% else %>
+  <% @image_position = 'flex-row-reverse'%>
+<% end %> 
+
+  <%= render partial: 'about_pages/info_card', locals: { content: content, image_position: @image_position } %>
+
+<% end %>

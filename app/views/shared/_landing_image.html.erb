@@ -1,0 +1,26 @@
+
+
+<div data-controller="home-pages" class="position-relative opacity-75" style="height: 800px; overflow: hidden;">
+  <%= image_tag "#{image}",
+        class: "img-fluid w-100 h-100",
+        alt: "Banner",
+        style: "object-fit: cover; transition: opacity 0.3s ease-out;",
+        data: { home_pages_target: "image" } %>
+
+  <div class="position-absolute top-50 start-50 translate-middle text-white" 
+       data-home-pages-target="text">
+    <div class="row">
+      <div class ="col-6">
+        <p class="lead font_inter24 "style="text-align: left;font-size: 35px;font-weight:bold;">
+            <%=image_content.data_text%>
+        </p>
+        <% if !image_content.location_heading.nil?%>
+          <div class="mt-2" style="text-align: left;font-style: italic; font-size: 25px;font-size: 18px; text-align:left;">
+            -<%= image_content.location_heading %>
+          </div>
+        <% end%>
+      </div>
+    </div> 
+    
+  </div>
+</div>

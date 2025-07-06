@@ -1,0 +1,36 @@
+<div class ="container font_inter24">
+ <br>
+    <div class = "row">
+        <div class="col-6" style="text-align:left;">
+            <div class="global_header global_blue text-center " style="letter-spacing: 3px;">FREQUENTLY ASKED QUESTIONS</div>
+              <br>
+              <hr>
+              <!--<div class = "text-center" style="font-style:italic;">Christ-Centered Counseling for Real-Life Struggles</div>-->
+
+        </div>
+    </div>
+    <br><br>
+    <div class="accordion accordion-flush global_accordian" id="accordionFlushExample">
+        <% @faq.each_with_index do |faq, index |%>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading<%= index %>" >
+            <button class="accordion-button collapsed"style = "font-size: 25px;"  type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<%= index %>" aria-expanded="false" aria-controls="flush-collapse<%= index %>">
+                <%= faq.question%>
+            </button>
+            </h2>
+            <div id="flush-collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="flush-heading<%= index %>" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body" style="padding:20px;">
+
+                <div class="card" style= "border:none;">
+                    <div class="card-body">
+                        <%= faq.question_answer%>
+                    </div>
+                </div>
+               
+            </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+  <br><br>

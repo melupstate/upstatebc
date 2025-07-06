@@ -1,0 +1,45 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="position-relative opacity-0 " style="height: 800px; overflow: hidden;transition: opacity 2s ease-in-out;">
+  
+<div class="container font_inter24" data-controller="fade-in">
+  <br>
+  <div class="global_header text-center global_blue" style="letter-spacing: 5px;">WHAT TO EXPECT</div>
+  <br>
+  <!--<div class="text-center">Christ-Centered Counseling for Real-Life Struggles</div>-->
+  <br>
+
+  <div class="row g-0"> <!-- g-0 removes gutters so dividers look clean -->
+    <% @home_pages_expect.each_with_index do |content, index| %>
+      <div class="col-md-4 fade-card opacity-30 px-3" data-fade-in-target="card" style="height: 400px;">
+
+        <!-- Add vertical divider except after the last card -->
+        <div class="card h-100 d-flex flex-column border-0 transition-opacity">
+            <!-- <div class="card-header global_blue" style="background-color:transparent;" >
+                   <%= content.location_heading.upcase %>
+                </div> -->
+          <div class="card-body d-flex flex-column">
+            <div class="flex-grow-1">
+              <h5 class="card-title"><%= content.location_heading.upcase %></h5>
+              <p class="card-text"><%= content.data_text %></p>
+            </div>
+
+            <% if content.button_name.present? && content.page_data_url.present? %>
+                <% path_helper = "#{content.page_data_url}_path" %>              
+                <% if respond_to?(path_helper) %>
+                    <%= link_to content.button_name.upcase, send(path_helper), class: "btn global_button_blue mt-auto" %>
+                <% else %>
+                    <!-- fallback or debug -->
+                    <%= link_to content.button_name.upcase, "#", class: "btn global_button_blue mt-auto" %>
+                <% end %>
+            <% end %>
+
+
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+

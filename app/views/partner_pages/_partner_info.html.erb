@@ -1,0 +1,29 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="position-relative opacity-0 " style="height: 800px; overflow: hidden;transition: opacity 2s ease-in-out;">
+  
+  <div class="container font_inter24">
+    <br>
+ 
+  
+    <br>
+  
+    <div class="card border-0">
+        <div class="card-body">
+            <h5 class="card-title global_blue global_header" style="margin-left:20%;"><%= @partner_pages_header.location_heading.upcase %></h5>
+            <hr>
+            <p style="margin-left:20%;">
+               <%=@partner_pages_header.data_text%>
+            </p>
+
+        <% if @partner_pages_header.button_name.present? %>
+              <a href="#" class="btn global_button_blue mt-auto"><%=@partner_pages_header.button_name %></a>
+            <% end %>
+        </div>
+    </div>
+    <br>
+   
+    
+</div>
+<hr>
+<br>
+</div>

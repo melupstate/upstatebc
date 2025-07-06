@@ -1,0 +1,38 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-light" >
+  <div class="container-fluid">
+    <!-- Left: Brand -->
+    <a class="navbar-brand global_blue font_inter18Thin" href="#" style='font-size:35px;'>Upstate Biblical Counseling</a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarText">
+      <!-- Center: Main links -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="margin-top:-15px;">
+        <li class="nav-item me-3"><%= link_to 'HOME', root_path, class: "nav-link nav_link" ,data:{turbo: false}%></li>
+
+        <!-- ABOUT Dropdown -->
+        <li class="nav-item dropdown me-3">
+          <a class="nav-link nav_link" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><%= link_to 'Meet the Team', about_pages_path, class: "dropdown-item",data:{turbo: false} %></li>
+            <li><%= link_to 'FAQ', about_faq_pages_path, class: "dropdown-item" ,data:{turbo: false}%></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item me-3"><%= link_to 'REQUEST COUNSELING', request_counseling_path, class: "nav-link nav_link",data:{turbo: false} %></li>
+        <li class="nav-item me-3"><%= link_to 'PARTNER WITH US', partner_pages_path, class: "nav-link nav_link" ,data:{turbo: false}%></li>
+      </ul>
+
+      <!-- Right: Login -->
+      <ul class="navbar-nav mb-2 mb-lg-0" style="margin-top:-23px;">
+        <li class="nav-item me-3"><%= link_to 'LOGIN', partner_pages_path, class: "nav-link nav_link",data:{turbo: false} %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

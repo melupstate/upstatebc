@@ -1,0 +1,22 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="position-relative opacity-0 " style="height: 800px; overflow: hidden;transition: opacity 2s ease-in-out;">
+  <%= image_tag "istockphoto-1322277517-1024x1024.jpg",
+        class: "img-fluid w-100 h-100",
+        alt: "Banner",
+        style: "object-fit: cover;" %>
+
+  <div class="position-absolute top-50 start-50 translate-middle text-white text-cente">
+    <div class="row">
+      <div class="col-6">
+        <p class="lead font_inter24" style="font-size: 35px;">
+          <%= @home_pages_landing2.data_text%>
+        </p>
+          <% if !@home_pages_landing2.location_heading.nil?%>
+          <div class="mt-2" style="font-style: italic; font-size: 25px; text-align:right;">
+            -<%= @home_pages_landing2.location_heading %>
+          </div>
+        <% end%>
+      </div>
+    </div> 
+  </div>
+</div>
