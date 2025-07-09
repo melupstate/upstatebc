@@ -1,13 +1,11 @@
 <div class = "container font_inter24" >
-    <br>
-    <div class = "text-center" style="font-style:italic;">
-        To help us better understand how we can serve you, please complete the form below, Note: Each individual seeking counseling should complete a separate form, except for children under age 12.
-    </div>
-    <br>
+   
 <div id="form_body" class="form_body" style="font-size:20px;">
-   <%= form_for  @pdi  ,local: true do |f| %>
+   <%= form_for  @pdi  ,local: true ,data:{controller: "pdi" } do |f| %>
 
         <% @pdi_columns.each_with_index do |c| %>
+            <%= f.hidden_field :pdiid,  id: "pdiid"%>
+
             <%= f.label c.pdi_column_name, c.pdi_column_description  %>
             <% if c.pdi_column_name == 'date_of_birth'%>
                 <%= f.date_field c.pdi_column_name, class: "form-control",  required:  c.required%>
@@ -16,12 +14,17 @@
                                         {  include_blank: ""}, {class: " form-control"}%>
             <% elsif c.pdi_column_name == 'gender'%>
                 <%= f.select c.pdi_column_name, options_for_select(['MALE','FEMALE']),{ include_blank: ""}, {class: "form-control"} %>
-            <% elsif c.pdi_column_name == 'church_member' %>  
+            <% elsif ['past_counseling','church_member','medical_conditions'].include?(c.pdi_column_name)  %>  
                 <%= f.select c.pdi_column_name, options_for_select(['YES','NO']),{ include_blank: ""}, {class: "form-control"} %>
-            <% elsif c.pdi_column_name == 'salvation_story' || c.pdi_column_name == 'past_counseling_details' %>  
-              <%= f.text_area c.pdi_column_name, class: "form-control",  required:  c.required%>  
+            <% elsif ['salvation_story','past_counseling_details','additional_medical_details','counseling_details'].include?(c.pdi_column_name) %>  
+              <%= f.text_area c.pdi_column_name, class: "form-control", rows: 5, required:  c.required%>  
+            <% elsif c.pdi_column_name == 'counseling_category' %>
+                <%= render 'pdi_forms/select_counseling_categories' %>
+            <% elsif c.pdi_column_name == 'martial_status' %>  
+                <%= f.select c.pdi_column_name, options_for_select(['SINGLE','MARRIED','SEPARATED','DIVORCED','WIDOW']),{ include_blank: ""}, {class: "form-control"} %>
+            
             <% else%>
-                <%= f.text_field c.pdi_column_name, class: "form-control", rows: 5, required:  c.required%>
+                <%= f.text_field c.pdi_column_name, class: "form-control",  required:  c.required%>
             <% end %>
                 
         <%end %>

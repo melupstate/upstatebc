@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :pdi_forms ,except: [:show]
   get 'pdi_forms/:id/edit_form1',to: 'pdi_forms#edit_form1',as: 'edit_form1'
   resources :pdi_form_datum ,except: [:show]
+  post 'populate_category',to: "pdi_forms#populate_category"
 
   ## END PDI FORMS
 

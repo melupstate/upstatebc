@@ -1,0 +1,32 @@
+<div data-controller="fade-toggle" data-fade-toggle-target="section"
+     class="opacity-0 " style="transition: opacity 2s ease-in-out;padding-top: 100px;">
+  
+  <div class="container font_inter24">
+    <br>
+    <div class = "row">
+        <div class="col-6" style="text-align:left;">
+            <div class="global_header text-center " style="letter-spacing: 3px;"><%= @request_counseling_form_submitted.location_heading %></div>
+              <br>
+              <!--<div class = "text-center" style="font-style:italic;">Christ-Centered Counseling for Real-Life Struggles</div>-->
+
+        </div>
+    </div>
+  
+    <br>
+
+    <div class="card border-0">
+        <div class="card-body">
+           <!-- <h5 class="card-title global_blue global_header" style="margin-left:20%;"><%#= content.location_heading.upcase %></h5>-->
+            <hr>
+            <p style="margin-left:20%;">
+               <%= @request_counseling_form_submitted.data_text%>
+            </p>
+        </div>
+    </div>
+
+  
+
+    
+</div>
+</div>
+<br><br><br>

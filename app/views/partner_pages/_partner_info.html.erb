@@ -2,10 +2,7 @@
      class="position-relative opacity-0 " style="height: 800px; overflow: hidden;transition: opacity 2s ease-in-out;">
   
   <div class="container font_inter24">
-    <br>
- 
-  
-    <br>
+    <br><br>
   
     <div class="card border-0">
         <div class="card-body">
@@ -13,17 +10,19 @@
             <hr>
             <p style="margin-left:20%;">
                <%=@partner_pages_header.data_text%>
+                <% if @partner_pages_header.button_name.present? %>
+                    <div style="text-align:center;">
+                    <a href="https://bcnetwork.givecloud.co/give" class="btn global_button_blue mt-auto" style="width:30%;"><%=@partner_pages_header.button_name %></a>
+                    </div>
+                 <% end %>
             </p>
 
-        <% if @partner_pages_header.button_name.present? %>
-              <a href="#" class="btn global_button_blue mt-auto"><%=@partner_pages_header.button_name %></a>
-            <% end %>
+ 
+           
         </div>
-    </div>
-    <br>
-   
+    </div> 
     
 </div>
 <hr>
-<br>
+
 </div>

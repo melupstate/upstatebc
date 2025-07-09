@@ -9,6 +9,7 @@ class PdiFormsController < ApplicationController
  
     @pdi = PdiForm.new
     @pdi_columns = PdiColumnDescription.where(pdi_form: 'pdi_form').order(sort: :asc)
+    
   end
 
   def create
@@ -50,9 +51,19 @@ class PdiFormsController < ApplicationController
     end
 
   end
+  def populate_category
+    #params = pdiid"=>"32", "categoryid"=>"22", "checked"=>true
+     
+    if params[:checked] == true && !params[:pdiid].nil?
+      PdiCategory.create(pdiid: params[:pdiid], category: params[:categoryid])
+    else
+      PdiCategory.where(pdiid: params[:pdiid], category: params[:categoryid]).delete_all
+    end
+  end
   private
   def get_pdi_options
     @reminder_types = ReminderType.all 
+    @categories = CounselingCategory.order(category: :asc)
    
   end
   def pdi_params

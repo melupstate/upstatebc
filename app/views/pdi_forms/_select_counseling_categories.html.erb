@@ -1,0 +1,20 @@
+<div data-controller="pdi">
+  <ul class="list-group list-group-flush" style="border:0px;">
+    <% @categories.each_slice(3) do |group| %>
+      <li class="list-group-item">
+        <div class="row">
+          <% group.each do |c| %>
+            <div class="col-md-4">
+              <div class="form-check">              
+                <%= check_box_tag "category_ids[]", c.category, false, id: "category_#{c.id}", class: "form-check-input",
+                data: {action: "click->pdi#populatePdiCategories"} %>
+                <%= label_tag "category_#{c.id}", c.category, class: "form-check-label" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<br><br>
