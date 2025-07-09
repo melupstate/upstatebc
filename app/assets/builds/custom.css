@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Inter24';
+  src: url('Inter_24pt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter18Thin';
+  src: url('Inter_18pt-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+.fa {
+  font-family: FontAwesome;
+
+}
+
+
+.global_blue {
+    color: #2f3a90;
+}
+.global_green {
+    color: #7CE33B;
+}
+.global_accordian .accordion-button:hover,
+.global_accordian .accordion-button:focus,
+.global_accordian .accordion-button:not(.collapsed) {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+}
+.nav_link {
+  color: #222;
+  text-decoration:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom:-20px;
+  margin:0;
+  padding:20;
+  border:0 none;
+  position: relative; 
+  outline: none;
+
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.nav_link:hover, .nav_link:focus {
+   color: #7883d3;
+}
+.footer_link {
+  color: #222;
+  text-decoration:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom:-20px;
+  margin:0;
+  padding:20;
+  border:0 none;
+  position: relative; 
+  outline: none;
+
+}
+.transparent-div {
+    background-color: transparent !important;
+}
+.font_inter24 {
+    font-family: 'Inter24';
+}
+.font_inter18Thin {
+    font-family: 'Inter18Thin';
+}
+.global_button_blue {
+
+  background-color: #2f3a90;
+  color: white;
+}
+.global_button_blue:hover {
+   background-color: #6571cd;
+   color: white;
+}
+.global_button_green {
+   background-color: #7CE33B;
+   
+}
+
+.global_button_green:hover {
+   background-color: #a5ec79;
+}
+.global_header {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.transition-opacity {
+  transition: opacity 0.8s ease-out;
+}
+
+
