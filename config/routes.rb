@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # END LOGIN
 
   #BEGIN USERS
+  resources :users, except: [:show]
   get 'createuser_38923489d8234k234', to: 'users#new'
 
   #END USERS
